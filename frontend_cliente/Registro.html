@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/alertify.min.css" />  
+</head>
+<body>
+  <div  class="login1">
+    <span class="login1_1">Registro de usuario</span>
+  </div>
+  <div class="login2">
+    <span class="login2_1">&nbsp;&nbsp;por favor ingrese el nombre de usuario:</span>
+	<input type="text" name="username" id="usr" class="usr_name">&nbsp;
+    <span class="color">*</span>
+  </div>
+  
+  <div class="login3">
+    <span class="login3_1">&nbsp;&nbsp;&nbsp;&nbsp;Por favor, ingrese contraseña:</span>
+	<input type="password" name="password" id="pwd" class="pass_word">&nbsp;
+     <span class="color">*</span>
+  </div>
+  
+  <div class="login4">
+    <span class="login4_1">Ingrese la contraseña nuevamente:</span>
+	<input type="password" name="password_1" id="pwd_1" class="pass_word_1">&nbsp;
+    <span class="color">*</span>
+  </div>
+  
+  <div class="login5">
+    <span class="login5_1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Código de verificación:</span>
+	<input type="text" id="input1" class="input_code">
+    <input type="button" id="checkCode" class="codeJS" value="Generar código de verificación" onclick="createCode()"/>&nbsp;
+    <span class="color">*</span>
+  </div>
+  
+  <div class="login6">
+    <input type="button" id="sumbitButton" value="registrado" onclick="registerValidate()"/>
+  </div>
+</body>
+</html>
+
