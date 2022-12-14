@@ -24,23 +24,25 @@
 	<input type="password" name="password" id="pwd" class="pass_word">&nbsp;
      <span class="color">*</span>
   </div>
-  
+
   <div class="login4">
-    <span class="login4_1">Ingrese la contraseña nuevamente:</span>
-	<input type="password" name="password_1" id="pwd_1" class="pass_word_1">&nbsp;
-    <span class="color">*</span>
+    <input type="button" id="sumbitButton" value="registradoA" onclick="registerValidate()"/>
   </div>
-  
+
   <div class="login5">
-    <span class="login5_1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Código de verificación:</span>
-	<input type="text" id="input1" class="input_code">
-    <input type="button" id="checkCode" class="codeJS" value="Generar código de verificación" onclick="createCode()"/>&nbsp;
-    <span class="color">*</span>
+    <input type="button" id="sumbitButton" value="registradoC" onclick="registerValidate()"/>
   </div>
-  
-  <div class="login6">
-    <input type="button" id="sumbitButton" value="registrado" onclick="registerValidate()"/>
-  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="js/alertify.min.js"></script>
+
+<script src="js/index.js"></script>
+
 </body>
 </html>
 

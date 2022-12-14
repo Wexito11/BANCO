@@ -18,6 +18,8 @@ btnCrear.addEventListener('click', () => {
     nombreCliente.value = ''
     claveCliente.value = ''
     idCliente.disabled = false
+    nombreCliente.disabled = false
+    claveCliente.disabled = false
     modalClientes.show()
     opcion = 'crear'
 })
