@@ -1,49 +1,49 @@
 const url = "http://localhost:8080/transaccion/"
 const url1 = "http://localhost:8080/transaccion/list"
 
-const contenedorT = document.querySelector('tbody')
+const contenedorTU = document.querySelector('tbody')
 
-let resultadosT = ''
+let resultadosTU = ''
 
-const modalTransacciones = new bootstrap.Modal(document.getElementById('modalTransaccion'))
-const formCuentas = document.querySelector('form')
-const idTRs = document.getElementById('idTR')
-const fechasT = document.getElementById('fechaT')
-const valores = document.getElementById('valorT')
-const tipos = document.getElementById('tipoT')
-const idCTs = document.getElementById('idCT')
+const modalTransaccionesU = new bootstrap.Modal(document.getElementById('modalTransaccionU'))
+const formCuentasU = document.querySelector('form')
+const idTRsU = document.getElementById('idTRU')
+const fechasTU = document.getElementById('fechaTU')
+const valoresU = document.getElementById('valorTU')
+const tiposU = document.getElementById('tipoTU')
+const idCTsU = document.getElementById('idCTU')
 
 let opcion = ''
 
 btnCrearT.addEventListener('click', () => {
-    idTRs.value = ''
-    fechasT.value = ''
-    valores.value = ''
-    tipos.value = ''
-    idCTs.value = ''
-    idTRs.disabled = true
-    tipos.disabled = false
-    fechasT.disabled = false
-    valorT.disabled = false
-    idCTs.disabled = false
-    modalTransacciones.show()
-    opcion = 'crearT'
+    idTRsU.value = ''
+    fechasTU.value = ''
+    valoresU.value = ''
+    tiposU.value = ''
+    idCTsU.value = ''
+    idTRsU.disabled = true
+    tiposU.disabled = false
+    fechasTU.disabled = false
+    valorTU.disabled = false
+    idCTsU.disabled = false
+    modalTransaccionesU.show()
+    opcion = 'crearTU'
 })
 
-const mostrar = (Transacciones) => {
-    Transacciones.forEach(Transaccion => {
-        resultadosT += `<tr>
-                        <td >${Transaccion.id_transaccion}</td>
-                        <td >${Transaccion.fecha_transaccion}</td>
-                        <td >${Transaccion.valor_transaccion}</td>
-                        <td >${Transaccion.tipo_transaccion}</td>
-                        <td >${Transaccion.cuenta.id_cuenta}</td>
-                        <td class="text-center" width="20%"><a class="btnEditarT btn btn-primary">Editar</a><a class="btnBorrarT btn btn-danger">Borrar</a></td>
+const mostrar = (TransaccionesU) => {
+    TransaccionesU.forEach(TransaccionU => {
+        resultadosTU += `<tr>
+                        <td >${TransaccionU.id_transaccion}</td>
+                        <td >${TransaccionU.fecha_transaccion}</td>
+                        <td >${TransaccionU.valor_transaccion}</td>
+                        <td >${TransaccionU.tipo_transaccion}</td>
+                        <td >${TransaccionU.cuenta.id_cuenta}</td>
+                        <td class="text-center" width="20%"><a class="btnEditarTU btn btn-primary">Editar</a><a class="btnBorrarTU btn btn-danger">Borrar</a></td>
                     </tr>`
-                    //alertify.confirm(resultadosT)
+                    Alertify.confirm(resultadosT)
     })
     
-    contenedorT.innerHTML = resultadosT
+    contenedorTU.innerHTML = resultadosTU
 }
 
 fetch(url1)
@@ -58,7 +58,7 @@ const on = (element, event, selector, handler) => {
     })
 }
 
-on(document, 'click', '.btnBorrarT', e => {
+on(document, 'click', '.btnBorrarTU', e => {
     const fila = e.target.parentNode.parentNode
     const id = fila.firstElementChild.innerHTML
     console.log(id)
@@ -76,44 +76,44 @@ on(document, 'click', '.btnBorrarT', e => {
 })
 
 
-let idTRForm = 0
-on(document, 'click', '.btnEditarT', e => {
+let idTRFormU = 0
+on(document, 'click', '.btnEditarTU', e => {
 
     const fila = e.target.parentNode.parentNode
     
-    idTRForm = fila.children[0].innerHTML
-    fechaTForm = fila.children[1].innerHTML
-    const valorForm = fila.children[2].innerHTML
-    tipoForm = fila.children[3].innerHTML
-    idCTForm = fila.children[4].innerHTML
-    idTRs.value = idTRForm
-    idTRs.disabled = true
-    fechasT.value = fechaTForm
-    fechasT.disabled = true
-    valores.value = valorForm
-    tipos.value = tipoForm
-    tipos.disabled = true
-    idCTs.value = idCTForm
-    idCTs.disabled = true
-    opcion = 'editarT'
-    modalTransacciones.show()
+    idTRFormU = fila.children[0].innerHTML
+    fechaTForU = fila.children[1].innerHTML
+    const valorFormU = fila.children[2].innerHTML
+    tipoFormU = fila.children[3].innerHTML
+    idCTFormU = fila.children[4].innerHTML
+    idTRsU.value = idTRFormU
+    idTRsU.disabled = true
+    fechasTU.value = fechaTFormU
+    fechasTU.disabled = true
+    valoresU.value = valorFormU
+    tiposU.value = tipoFormU
+    tiposU.disabled = true
+    idCTsU.value = idCTFormU
+    idCTsU.disabled = true
+    opcion = 'editarTU'
+    modalTransaccionesU.show()
 })
 
-formCuentas.addEventListener('submit', (e) => {
+formCuentasU.addEventListener('submit', (e) => {
     e.preventDefault()
 
-        if (opcion == 'crearC') {
+        if (opcion == 'crearCU') {
             fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    id_transaccion: idTRs.value,
-                    fecha_transaccion: fechasT.value,
-                    valor_transaccion: valores.value,
-                    tipo_transaccion: tipos.value,
-                    id_cuenta: idCTs.value
+                    id_transaccion: idTRsU.value,
+                    fecha_transaccion: fechasTU.value,
+                    valor_transaccion: valoresU.value,
+                    tipo_transaccion: tiposU.value,
+                    id_cuenta: idCTsU.value
                 }
                 
                 )
@@ -125,7 +125,7 @@ formCuentas.addEventListener('submit', (e) => {
                     mostrar(nuevaTransaccion)
                 })
         }
-        if (opcion == 'editarT') {
+        if (opcion == 'editarTU') {
 
             fetch(url, {
                 method: 'PUT',
@@ -133,16 +133,16 @@ formCuentas.addEventListener('submit', (e) => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    id_transaccion: idTRs.value,
-                    fecha_transaccion: fechasT.value,
-                    valor_transaccion: valores.value,
-                    tipo_transaccion: tipos.value,
-                    id_cuenta: idCTs.value
+                    id_transaccion: idTRsU.value,
+                    fecha_transaccion: fechasTU.value,
+                    valor_transaccion: valoresU.value,
+                    tipo_transaccion: tiposU.value,
+                    id_cuenta: idCTsU.value
                 })
             })
                 .then(response => location.reload())
 
         }
-        modalTransacciones.hide()
+        modalTransaccionesU.hide()
     
 })

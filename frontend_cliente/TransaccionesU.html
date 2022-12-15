@@ -12,9 +12,9 @@
 <body>
     
     <div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
-        <button id="btnCrearT" type="button" class="btn btn-primary">Crear Transaccion</button>
+        <button id="btnCrearTU" type="button" class="btn btn-primary">Crear Transaccion</button>
     
-        <table id="Transacciones" class="table mt-2 table-bordered table-striped">
+        <table id="TransaccionesU" class="table mt-2 table-bordered table-striped">
           <thead>
             <tr class="text-center">
                 <th>ID</th>  
@@ -29,7 +29,7 @@
         </table>
     </div>
 
-    <div class="modal fade" id="modalTransaccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalTransaccionU" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header bg-primary text-white">
@@ -38,32 +38,32 @@
             <div class="modal-body">
               <form>
                 <div class="mb-3">
-                    <label for="idTR" class="col-form-label">ID :</label>
-                    <input id="idTR" type="text" placeholder="#" class="form-control" id="recipient-name"
+                    <label for="idTRU" class="col-form-label">ID :</label>
+                    <input id="idTRU" type="text" placeholder="#" class="form-control" id="recipient-name"
                       required autocomplete="off" oninvalid="setCustomValidity('#')"
                       oninput="setCustomValidity('')">
                   </div>
                 <div class="mb-3">
-                  <label for="fechaT" class="col-form-label">FECHA :</label>
-                  <input id="fechaT" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
+                  <label for="fechaTU" class="col-form-label">FECHA :</label>
+                  <input id="fechaTU" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
                     required autocomplete="off" oninvalid="setCustomValidity('Digite una Identificación')"
                     oninput="setCustomValidity('')">
                 </div>
                 <div class="mb-3">
-                  <label for="valorT" class="col-form-label">VALOR :</label>
-                  <input id="valorT" placeholder="Digite valor" type="text" class="form-control" id="recipient-name"
+                  <label for="valorTU" class="col-form-label">VALOR :</label>
+                  <input id="valorTU" placeholder="Digite valor" type="text" class="form-control" id="recipient-name"
                     required autocomplete="off" oninvalid="setCustomValidity('Digite un valor')"
                     oninput="setCustomValidity('')">
                 </div>
                 <div class="mb-3">
-                  <label for="tipoT" class="col-form-label">TIPO :</label>
-                  <input id="tipoT" placeholder="Digite un tipo D o R" type="text" class="form-control"
+                  <label for="tipoTU" class="col-form-label">TIPO :</label>
+                  <input id="tipoTU" placeholder="Digite un tipo D o R" type="text" class="form-control"
                     id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Digite un tipo')"
                     oninput="setCustomValidity('')">
                 </div>
                 <div class="mb-3">
-                    <label for="idCT" class="col-form-label">ID CUENTA :</label>
-                    <input id="idCT" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
+                    <label for="idCTU" class="col-form-label">ID CUENTA :</label>
+                    <input id="idCTU" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
                       required autocomplete="off" oninvalid="setCustomValidity('Digite una Identificación')"
                       oninput="setCustomValidity('')">
                   </div>
@@ -78,7 +78,7 @@
     </div>
 
     <center>
-        <a href="IndexAdmin.html" title="Regresar a las opciones">REGRESAR</a>
+        <a href="IndexCliente.html" title="Regresar a las opciones">REGRESAR</a>
     </center>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -89,7 +89,7 @@
       crossorigin="anonymous"></script>
     <script src="js/alertify.min.js"></script>
 
-    <script src="js/transacciones.js"></script>
+    <script src="js/transaccionesU.js"></script>
 
 
 </body>

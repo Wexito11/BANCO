@@ -2,45 +2,45 @@
 const url = "http://localhost:8080/cuenta/"
 const url1 = "http://localhost:8080/cuenta/list"
 
-const contenedorC = document.querySelector('tbody')
+const contenedorCU = document.querySelector('tbody')
 
-let resultadosC = ''
+let resultadosCU = ''
 
-const modalCuentas = new bootstrap.Modal(document.getElementById('modalCuenta'))
-const formCuentas = document.querySelector('form')
-const idCuentas = document.getElementById('idC')
-const fechas = document.getElementById('fecha')
-const saldos = document.getElementById('saldo')
-const idClis = document.getElementById('idCLI')
+const modalCuentasU = new bootstrap.Modal(document.getElementById('modalCuentaU'))
+const formCuentasU = document.querySelector('form')
+const idCuentasU = document.getElementById('idCU')
+const fechasU = document.getElementById('fechaU')
+const saldosU = document.getElementById('saldoU')
+const idClisU = document.getElementById('idCLIU')
 
 let opcion = ''
 
 btnCrearC.addEventListener('click', () => {
-    idCuentas.value = ''
-    fechas.value = ''
-    saldos.value = ''
-    idClis.value = ''
-    idCuentas.disabled = false
-    fechas.disabled = false
-    saldos.disabled = false
-    idClis.disabled = false
-    modalCuentas.show()
-    opcion = 'crearC'
+    idCuentasU.value = ''
+    fechasU.value = ''
+    saldosU.value = ''
+    idClisU.value = ''
+    idCuentasU.disabled = false
+    fechasU.disabled = false
+    saldosU.disabled = false
+    idClisU.disabled = false
+    modalCuentasU.show()
+    opcion = 'crearCU'
 })
 
 const mostrar = (Cuentas) => {
     Cuentas.forEach(Cuenta => {
-        resultadosC += `<tr>
+        resultadosCU += `<tr>
                         <td >${Cuenta.id_cuenta}</td>
                         <td >${Cuenta.fecha_apertura}</td>
                         <td >${Cuenta.saldo_cuenta}</td>
                         <td >${Cuenta.cliente.id_cliente}</td>
-                        <td class="text-center" width="20%"><a class="btnEditarC btn btn-primary">Editar</a><a class="btnBorrarC btn btn-danger">Borrar</a></td>
+                        <td class="text-center" width="20%"><a class="btnEditarCU btn btn-primary">Editar</a><a class="btnBorrarCU btn btn-danger">Borrar</a></td>
                     </tr>`
                     //alertify.confirm(resultadosC)
     })
     
-    contenedorC.innerHTML = resultadosC
+    contenedorCU.innerHTML = resultadosCU
 }
 
 fetch(url1)
@@ -55,7 +55,7 @@ const on = (element, event, selector, handler) => {
     })
 }
 
-on(document, 'click', '.btnBorrarC', e => {
+on(document, 'click', '.btnBorrarCU', e => {
     const fila = e.target.parentNode.parentNode
     const id = fila.firstElementChild.innerHTML
     console.log(id)
@@ -73,40 +73,40 @@ on(document, 'click', '.btnBorrarC', e => {
 })
 
 
-let idFormC = 0
+let idFormCU = 0
 on(document, 'click', '.btnEditarC', e => {
 
     const fila = e.target.parentNode.parentNode
     
-    idFormC = fila.children[0].innerHTML
-    fechaForm = fila.children[1].innerHTML
-    const saldoForm = fila.children[2].innerHTML
-    idClisForm = fila.children[3].innerHTML
-    idCuentas.value = idFormC
-    idCuentas.disabled = true
-    fechas.value = fechaForm
-    fechas.disabled = true
-    saldos.value = saldoForm
-    idClis.value = idClisForm
-    idClis.disabled = true
-    opcion = 'editarT'
-    modalCuentas.show()
+    idFormCU = fila.children[0].innerHTML
+    fechaFormU = fila.children[1].innerHTML
+    const saldoFormU = fila.children[2].innerHTML
+    idClisFormU = fila.children[3].innerHTML
+    idCuentasU.value = idFormCU
+    idCuentasU.disabled = true
+    fechasU.value = fechaFormU
+    fechasU.disabled = true
+    saldosU.value = saldoFormU
+    idClisU.value = idClisFormU
+    idClisU.disabled = true
+    opcion = 'editarTU'
+    modalCuentasU.show()
 })
 
-formCuentas.addEventListener('submit', (e) => {
+formCuentasU.addEventListener('submit', (e) => {
     e.preventDefault()
 
-        if (opcion == 'crearC') {
+        if (opcion == 'crearCU') {
             fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    id_cuenta: idC.value,
-                    fecha_apertura: fecha.value,
-                    saldo_cuenta: saldo.value,
-                    id_cliente: idCLI.value
+                    id_cuenta: idCU.value,
+                    fecha_apertura: fechaU.value,
+                    saldo_cuenta: saldoU.value,
+                    id_cliente: idCLIU.value
                 }
                 
                 )
@@ -127,14 +127,14 @@ formCuentas.addEventListener('submit', (e) => {
                 },
                 body: JSON.stringify({
                     id_cuenta: idC.value,
-                    fecha_apertura: fecha.value,
-                    saldo_cuenta: saldo.value,
-                    id_cliente: idCLI.value
+                    fecha_apertura: fechaU.value,
+                    saldo_cuenta: saldoU.value,
+                    id_cliente: idCLIU.value
                 })
             })
                 .then(response => location.reload())
 
         }
-        modalCuentas.hide()
+        modalCuentasU.hide()
     
 })

@@ -12,9 +12,9 @@
 <body>
     
     <div class="container mt-4 shadow-lg p-3 mb-5  rounded ">
-        <button id="btnCrearC" type="button" class="btn btn-primary">Crear Cuenta</button>
+        <button id="btnCrearCU" type="button" class="btn btn-primary">Crear Cuenta</button>
     
-        <table id="Cuentas" class="table mt-2 table-bordered table-striped">
+        <table id="CuentasU" class="table mt-2 table-bordered table-striped">
           <thead>
             <tr class="text-center">
               <th>ID</th>
@@ -29,7 +29,7 @@
         </table>
     </div>
 
-    <div class="modal fade" id="modalCuenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalCuentaU" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header bg-primary text-white">
@@ -38,26 +38,26 @@
             <div class="modal-body">
               <form>
                 <div class="mb-3">
-                  <label for="idC" class="col-form-label">Id Cuenta :</label>
-                  <input id="idC" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
+                  <label for="idCU" class="col-form-label">Id Cuenta :</label>
+                  <input id="idCU" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
                     required autocomplete="off" oninvalid="setCustomValidity('Digite una Identificación')"
                     oninput="setCustomValidity('')">
                 </div>
                 <div class="mb-3">
-                  <label for="fecha" class="col-form-label">Fecha Apertura :</label>
-                  <input id="fecha" placeholder="Digite fecha apertura" type="text" class="form-control" id="recipient-name"
+                  <label for="fechaU" class="col-form-label">Fecha Apertura :</label>
+                  <input id="fechaU" placeholder="Digite fecha apertura" type="text" class="form-control" id="recipient-name"
                     required autocomplete="off" oninvalid="setCustomValidity('Digite fecha apertura')"
                     oninput="setCustomValidity('')">
                 </div>
                 <div class="mb-3">
-                  <label for="saldo" class="col-form-label">Saldo :</label>
-                  <input id="saldo" type="text" placeholder="Digite el saldo" class="form-control"
+                  <label for="saldoU" class="col-form-label">Saldo :</label>
+                  <input id="saldoU" type="text" placeholder="Digite el saldo" class="form-control"
                     id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Digite saldo')"
                     oninput="setCustomValidity('')">
                 </div>
                 <div class="mb-3">
-                    <label for="idCLI" class="col-form-label">Id Cliente :</label>
-                    <input id="idCLI" type="text" placeholder="Digite el ID" class="form-control"
+                    <label for="idCLIU" class="col-form-label">Id Cliente :</label>
+                    <input id="idCLIU" type="text" placeholder="Digite el ID" class="form-control"
                       id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Digite un ID')"
                       oninput="setCustomValidity('')">
                   </div>
@@ -72,7 +72,7 @@
     </div>
 
     <center>
-      <a href="IndexAdmin.html" title="Regresar a las opciones">REGRESAR</a>
+      <a href="IndexCliente.html" title="Regresar a las opciones">REGRESAR</a>
     </center>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -83,7 +83,7 @@
       crossorigin="anonymous"></script>
     <script src="js/alertify.min.js"></script>
 
-    <script src="js/cuentas.js"></script>
+    <script src="js/configurarcuenta.js"></script>
 
 
 </body>
