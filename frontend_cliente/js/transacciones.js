@@ -76,7 +76,7 @@ on(document, 'click', '.btnBorrarT', e => {
 })
 
 
-let idForm = 0
+let idTRForm = 0
 on(document, 'click', '.btnEditarT', e => {
 
     const fila = e.target.parentNode.parentNode
@@ -109,19 +109,20 @@ formCuentas.addEventListener('submit', (e) => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    id_transaccion: idTRs.value,
                     fecha_transaccion: fechaT.value,
                     valor_transaccion: valor.value,
-                    tipo_transaccion: tipo.value,
-                    id_cuenta: idTRs.value
+                    tipo_transaccion: tipoT.value,
+                    id_cuenta: idCTs.value
                 }
                 
                 )
             })
                 .then(response => response.json())
                 .then(data => {
-                    const nuevaCuenta = []
-                    nuevaCuenta.push(data)
-                    mostrar(nuevaCuenta)
+                    const nuevaTransaccion = []
+                    nuevaTransaccion.push(data)
+                    mostrar(nuevaTransaccion)
                 })
         }
         if (opcion == 'editarT') {
@@ -132,15 +133,16 @@ formCuentas.addEventListener('submit', (e) => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    id_transaccion: idTRs.value,
                     fecha_transaccion: fechaT.value,
                     valor_transaccion: valor.value,
-                    tipo_transaccion: tipo.value,
-                    id_cuenta: idTRs.value
+                    tipo_transaccion: tipoT.value,
+                    id_cuenta: idCTs.value
                 })
             })
                 .then(response => location.reload())
 
         }
-        modalCuentas.hide()
+        modalTransacciones.hide()
     
 })

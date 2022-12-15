@@ -73,16 +73,16 @@ on(document, 'click', '.btnBorrarC', e => {
 })
 
 
-let idForm = 0
+let idFormC = 0
 on(document, 'click', '.btnEditarC', e => {
 
     const fila = e.target.parentNode.parentNode
     
-    idForm = fila.children[0].innerHTML
+    idFormC = fila.children[0].innerHTML
     fechaForm = fila.children[1].innerHTML
     const saldoForm = fila.children[2].innerHTML
     idClisForm = fila.children[3].innerHTML
-    idCuentas.value = idForm
+    idCuentas.value = idFormC
     idCuentas.disabled = true
     fechas.value = fechaForm
     fechas.disabled = true
