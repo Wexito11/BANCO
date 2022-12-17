@@ -12,32 +12,69 @@
 <body>
   <center> 
   <div  class="login1">
-    <span class="login1_1">REGISTRO DE USUARIO</span>
+    <br>
+    <h1> REGISTRO </h1>
   </div>
   <br>
   <div class="login2">
-    <span class="login2_1">&nbsp;&nbsp;por favor ingrese el nombre de usuario:</span>
-	<input type="text" name="username" id="usr" class="usr_name">&nbsp;
-    <span class="color">*</span>
+    <label for="Usuario" class="col-form-label">USUARIO:</label>
+    <input type="text" name="password" id="contraseña" class="pass_word">&nbsp;
+    
   </div>
   
   <div class="login3">
-    <span class="login3_1">&nbsp;&nbsp;&nbsp;&nbsp;Por favor, ingrese contraseña:</span>
-	<input type="password" name="password" id="pwd" class="pass_word">&nbsp;
-     <span class="color">*</span>
+    <label for="contraseña" class="col-form-label">CONTRASEÑA:</label>
+	  <input type="password" name="password" id="Contraseña" class="pass_word">&nbsp;
+    
   </div>
   <br>
   <div class="login4">
-    <input type="button" id="sumbitButton" value="USUARIO" onclick="registerValidate()"/>
+    <button id="EntrarUser" type="button" class="btn btn-primary">USUARIO</button>
+  
+    <button id="EntrarAdmin" type="button" class="btn btn-primary">AMINISTRADOR</button>
+  
   </div>
-
+  <br>
   <div class="login5">
-    <input type="button" id="sumbitButton" value="AMINISTRADOR" onclick="registerValidate()"/>
+    <button id="NuevoUser" type="button" class="btn btn-primary">NUEVO USUARIO</button>
   </div>
 
-  <div class="login5"><
-  <button id="btnCrearA" type="button" class="btn btn-primary">Crear Admin</button>
-  /div>
+  <div class="modal fade" id="modalCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Clientes</h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="id" class="col-form-label">Id Cliente :</label>
+              <input id="id" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
+                required autocomplete="off" oninvalid="setCustomValidity('Digite una Identificación')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="col-form-label">Nombre Cliente :</label>
+              <input id="nombre" placeholder="Digite el nombre" type="text" class="form-control" id="recipient-name"
+                required autocomplete="off" oninvalid="setCustomValidity('Digite un Nombre')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+              <label for="clave" class="col-form-label">Clave Cliente :</label>
+              <input id="clave" placeholder="Digite una contraseña" type="password" class="form-control"
+                id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Digite una contraseña')"
+                oninput="setCustomValidity('')">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
 </center>
 </body>
 

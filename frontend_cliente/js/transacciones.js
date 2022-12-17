@@ -113,7 +113,8 @@ formCuentas.addEventListener('submit', (e) => {
                     fecha_transaccion: fechasT.value,
                     valor_transaccion: valores.value,
                     tipo_transaccion: tipos.value,
-                    id_cuenta: idCTs.value
+                    id_cuenta: idCTs.value,
+                    id_cliente: ""
                 }
                 
                 )
