@@ -18,24 +18,26 @@
   <br>
   <div class="login2">
     <label for="Usuario" class="col-form-label">USUARIO:</label>
-    <input type="text" name="password" id="contraseña" class="pass_word">&nbsp;
+    <input type="text" name="password" id="user" class="pass_word">&nbsp;
     
   </div>
   
   <div class="login3">
     <label for="contraseña" class="col-form-label">CONTRASEÑA:</label>
-	  <input type="password" name="password" id="Contraseña" class="pass_word">&nbsp;
+	  <input type="password" name="password" id="contraseña" class="pass_word">&nbsp;
     
   </div>
   <br>
   <div class="login4">
-    <button id="EntrarUser" type="button" class="btn btn-primary">USUARIO</button>
-  
-    <button id="EntrarAdmin" type="button" class="btn btn-primary">AMINISTRADOR</button>
+    <button id="EntrarUser"type="button" class="btn btn-primary" onclick="location.href='IndexCliente.html'">CLIENTE</button>
+    
+    <button id="EntrarAdmin" type="button" class="btn btn-primary" onclick="location.href='IndexAdmin.html'">ADMINISTRADOR</button>
+    
   
   </div>
   <br>
   <div class="login5">
+    
     <button id="NuevoUser" type="button" class="btn btn-primary">NUEVO USUARIO</button>
   </div>
 
@@ -48,19 +50,19 @@
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="id" class="col-form-label">Id Cliente :</label>
+              <label for="id" class="col-form-label">Id:</label>
               <input id="id" type="text" placeholder="Digite el identificador" class="form-control" id="recipient-name"
                 required autocomplete="off" oninvalid="setCustomValidity('Digite una Identificación')"
                 oninput="setCustomValidity('')">
             </div>
             <div class="mb-3">
-              <label for="nombre" class="col-form-label">Nombre Cliente :</label>
+              <label for="nombre" class="col-form-label">Nombre:</label>
               <input id="nombre" placeholder="Digite el nombre" type="text" class="form-control" id="recipient-name"
                 required autocomplete="off" oninvalid="setCustomValidity('Digite un Nombre')"
                 oninput="setCustomValidity('')">
             </div>
             <div class="mb-3">
-              <label for="clave" class="col-form-label">Clave Cliente :</label>
+              <label for="clave" class="col-form-label">Clave:</label>
               <input id="clave" placeholder="Digite una contraseña" type="password" class="form-control"
                 id="recipient-name" required autocomplete="off" oninvalid="setCustomValidity('Digite una contraseña')"
                 oninput="setCustomValidity('')">
